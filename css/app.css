@@ -1,7 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 html {
     box-sizing: border-box;
+    font-family: 'Poppins';
 }
 
 *, *:before, *:after{
     box-sizing: inherit;
+    margin: 0;
+}
+
+/*Header*/
+.hero{
+    position: relative;
+}
+
+.hero-title{
+    position: absolute;
+    top: 500px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-title:nth-child(2){
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.hero-title-boss{
+    font-size: 80px;
+    text-transform: uppercase;
+    font-weight: 500;
 }
