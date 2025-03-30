@@ -8,18 +8,28 @@ html {
 *, *:before, *:after{
     box-sizing: inherit;
     margin: 0;
+    width: 100%;
 }
 
 /*Header*/
 .hero{
     position: relative;
+    width: 100%;
+}
+
+.hero img{
+    width: 100%;
+    display: block;
+    height: 70vh; 
+    object-fit: cover;
 }
 
 .hero-title{
     position: absolute;
-    top: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #fff;
-    width: 100%;
     text-align: center;
 }
 
@@ -32,4 +42,55 @@ html {
     font-size: 80px;
     text-transform: uppercase;
     font-weight: 500;
+}
+
+/*My Work*/
+
+.work-results{
+    margin-top: 80px;
+}
+
+.work-results h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+.work-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.work-item img{
+    height: 600px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.work-item p{
+    text-align: center;
+    font-size: 20px;
+}
+
+/*Footer*/
+.footer{
+    background-color: blueviolet;
+    position: relative;
+    margin-top: 80px;
+}
+
+.footer img{
+    display: block;
+}
+
+.footer-title{
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
 }
