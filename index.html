@@ -44,9 +44,18 @@
             </div>
         </section>
         <section class="comments-container container">
-            <div class="input-comment">
-                <h3>Agregar comentario</h3>
-                <form action=""></form>
+            <form id="formulario" class="input-comment">
+                <label for="comment">Comentarios</label>
+                <textarea id="comment"></textarea>
+                <input type="submit" value="Enviar">
+            </form>
+            <div class="comment-list" id="comment-list">
+                <ul>
+                    <li>
+                        <!--Hola, soy un comentario
+                        <<i class="fa-solid fa-trash"></i>-->
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
@@ -56,5 +65,6 @@
             <p>Contáctame</p>
         </div>
     </footer>
+    <script src="./js/app.js"></script>
 </body>
 </html>
