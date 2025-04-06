@@ -12,6 +12,16 @@ function eventlisteners() {
 
   //Borrando el comentario
   listComments.addEventListener("click", deleteComment);
+
+  //Cargar los comentarios de localStorage
+  document.addEventListener("DOMContentLoaded", () => {
+    //Obtener el localStorage los comentarios
+    comments = JSON.parse(localStorage.getItem("comments")) || [];
+    console.log(comments);
+
+    //Cargar html con comments guardados
+    crearHTML();
+  });
 }
 
 //Añadir comentario
@@ -74,6 +84,8 @@ function crearHTML() {
       listComments.appendChild(li);
     });
   }
+
+  sincronizarStorage();
 }
 
 //Limpiar el HTML
@@ -95,4 +107,8 @@ function deleteComment(e) {
     //Volvemos a renderizar el HTML
     crearHTML();
   }
+}
+
+function sincronizarStorage() {
+  localStorage.setItem("comments", JSON.stringify(comments));
 }
