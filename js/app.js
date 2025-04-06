@@ -9,6 +9,9 @@ eventlisteners();
 function eventlisteners() {
   //Cuando se envía el formulario
   formulario.addEventListener("submit", addComment);
+
+  //Borrando el comentario
+  listComments.addEventListener("click", deleteComment);
 }
 
 //Añadir comentario
@@ -51,11 +54,21 @@ function crearHTML() {
 
   if (comments.length > 0) {
     comments.forEach((comment) => {
+      //Crear botón para eliminar el comentario
+      const btnDelete = document.createElement("i");
+      btnDelete.classList.add("fa-solid", "fa-trash-can");
+
       //Crear elemento y añadirlo al contenido de la lista
       const li = document.createElement("li");
 
       //Añadir el texto del comentario
-      li.innerHTML = `<strong>${comment.hour}:</strong> ${comment.comment}`;
+      li.innerHTML = `<p class="comment-hour">${comment.hour}</p> 
+      <div class="comment-container"><p>${comment.comment}</p>
+      ${btnDelete.outerHTML}</div>
+      `;
+
+      //Añadir el id al li
+      li.id = comment.id;
 
       //Añadir el comentario al DOM
       listComments.appendChild(li);
@@ -67,5 +80,19 @@ function crearHTML() {
 function limpiarHTML() {
   while (listComments.children[0]) {
     listComments.removeChild(listComments.firstChild);
+  }
+}
+
+//Eliminar comentario
+function deleteComment(e) {
+  if (e.target.classList.contains("fa-trash-can")) {
+    //Obtenemos el id del comentario
+    const commentId = e.target.parentElement.parentElement.id;
+
+    //Filtramos los comentarios
+    comments = comments.filter((comment) => comment.id != commentId);
+
+    //Volvemos a renderizar el HTML
+    crearHTML();
   }
 }

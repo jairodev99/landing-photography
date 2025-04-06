@@ -160,3 +160,11 @@ html {
 .comment-list li i:hover{
     color: rgb(238, 166, 78);
 }
+
+.comment-hour{
+    font-size: 20px;
+}
+
+.comment-container{
+    display: flex;
+}
