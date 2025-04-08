@@ -4,7 +4,7 @@
 :root{
     --color-primary: #1B4242;
     --color-secondary: #5C8374;
-    --color-tertiary: #9EC8B9;
+    --color-tertiary: #579f86;
     --color-background: #202021;
 }
 
@@ -25,7 +25,6 @@ html {
     display: block;
     margin: 0 auto;
     width: 1200px;
-    text-transform: uppercase;
 }
 
 /*Globales*/
@@ -35,6 +34,7 @@ html {
     color: #fff;
     margin-top: 80px;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 /*Header*/
@@ -86,12 +86,12 @@ html {
 .work-item div{
     text-align: center;
     font-size: 20px;
-    background-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
     color: #fff;
     padding: 10px;
     cursor: pointer;
     border-end-end-radius: 10px;
-    transition: background-color 1s ease;
+    transition: background-color 0.5s ease;
 }
 
 .work-item div:hover{
@@ -137,6 +137,7 @@ html {
     border: 0;
     color: #fff;
     border-end-end-radius: 10px;
+    transition: background-color 0.5s ease;
 }
 
 .input-comment input:hover{
@@ -156,6 +157,7 @@ html {
 .comment-list li i{
     text-align: end;
     cursor: pointer;
+    transition: color 0.5s ease;
 }
 
 .comment-list li i:hover{
