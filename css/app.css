@@ -2,10 +2,10 @@
 
 /* Variables */
 :root{
-    --color-primary: #1B4242;
-    --color-secondary: #5C8374;
-    --color-tertiary: #579f86;
-    --color-background: #202021;
+    --color-primary: #030303;
+    --color-secondary: #D4C9BE;
+    --color-tertiary: #123458;
+    --color-background: #F1EFEC;
 }
 
 html {
@@ -24,14 +24,14 @@ html {
 .container{
     display: block;
     margin: 0 auto;
-    width: 1200px;
+    max-width: 1200px;
 }
 
 /*Globales*/
 .title{
     text-align: center;
-    font-size: 50px;
-    color: #fff;
+    font-size: 40px;
+    color: var(--color-primary);
     margin-top: 80px;
     font-weight: 500;
     text-transform: uppercase;
@@ -61,7 +61,7 @@ html {
 
 .hero-title:nth-child(2){
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .hero-title-boss{
@@ -77,25 +77,26 @@ html {
 }
 
 .work-container{
-    width: 100%;
+    width: 90%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
 }
 
 .work-item div{
     text-align: center;
     font-size: 20px;
-    background-color: var(--color-tertiary);
-    color: #fff;
+    background-color: var(--color-secondary);
     padding: 10px;
     cursor: pointer;
     border-end-end-radius: 10px;
+    border: solid 2px var(--color-secondary);
+    border-top: none;
     transition: background-color 0.5s ease;
 }
 
 .work-item div:hover{
-    background-color: var(--color-primary);
+    background-color: var(--color-background);
 }
 
 .work-item img{
@@ -126,6 +127,10 @@ html {
     text-transform: uppercase;
 }
 
+.comments-container{
+    width: 90%;
+}
+
 .input-comment input{
     font-size: 20px;
     width: 300px;
@@ -134,14 +139,13 @@ html {
     cursor: pointer;
     padding: 10px;
     background-color: var(--color-secondary);
-    border: 0;
-    color: #fff;
     border-end-end-radius: 10px;
-    transition: background-color 0.5s ease;
+    transition: all 0.5s ease;
+    border: solid 2px var(--color-secondary);
 }
 
 .input-comment input:hover{
-    background-color: var(--color-primary);
+    background-color: var(--color-background);
 }
 
 
@@ -151,7 +155,6 @@ html {
 }
 .comment-list li{
     margin-top: 30px;
-    color: #fff;
 }
 
 .comment-list li i{
@@ -172,12 +175,23 @@ html {
     display: flex;
 }
 
-.comment-textarea{
+.comment-textarea {
     height: 100px;
     font-size: 20px;
     padding: 10px;
-    border: 0;
-    border-end-end-radius: 10px;
+    border-radius: 10px;
     resize: none;
-    font-size: 25px;
+    border: none;
+    outline: 2px solid var(--color-background); /* Cambia el color del outline */
+    transition: outline-color 0.3s ease; /* Transición suave */
+}
+
+.comment-textarea:focus {
+    outline: 2px solid var(--color-secondary); /* Cambia el color del outline */
+}
+
+
+/*Seccion de paquetes*/
+.service-packages-container{
+    width: 90%;
 }
